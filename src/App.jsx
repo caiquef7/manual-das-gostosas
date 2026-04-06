@@ -635,7 +635,7 @@ export default function App() {
                     <div className="flex items-center gap-2">
                         <Zap className="w-4 h-4 text-fuchsia-400 fill-fuchsia-400" />
                         <span className="text-[10px] text-white uppercase font-black tracking-[0.4em]">
-                            Manual das Gostosas
+                            Termômetro da Autoestima
                         </span>
                     </div>
                     <p className="text-[8px] text-slate-500 font-bold uppercase tracking-widest text-center">
