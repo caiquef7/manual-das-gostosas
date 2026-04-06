@@ -381,7 +381,7 @@ export default function App() {
                     <div className="flex items-center gap-3 cursor-pointer" onClick={() => setView('mood')}>
                         <div>
                             <h1 className="font-black text-slate-800 leading-none text-lg tracking-tight">
-                                MANUAL DAS GOSTOSAS
+                                TERMÔMETRO DA AUTOESTIMA
                             </h1>
                             <span className="text-[10px] text-pink-500 font-bold uppercase tracking-[0.2em]">
                                 O Guia Secreto
