@@ -500,7 +500,6 @@ export default function App() {
                                 <div className="p-6 bg-pink-50/50 border border-pink-100 rounded-[2rem] text-slate-700 text-sm italic font-medium leading-relaxed text-center shadow-sm">
                                     "{fraseCientificaInicial}"
                                 </div>
-                            )}
 
                             <button 
                                 onClick={() => setFraseCientificaInicial(FRASES_CIENTIFICAS[Math.floor(Math.random() * FRASES_CIENTIFICAS.length)])} 
