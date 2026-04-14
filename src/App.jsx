@@ -597,7 +597,7 @@ export default function App() {
                                         className="w-full bg-gradient-to-r from-pink-500 to-fuchsia-500 text-white font-black py-4 rounded-2xl shadow-lg shadow-pink-200 transition-transform active:scale-95 flex items-center justify-center gap-2"
                                     >
                                         <Sparkles className="w-5 h-5" />
-                                        ME MOTIVE
+                                        FRASE POEMA
                                         <Sparkles className="w-5 h-5" />
                                     </button>
                                 </div>
