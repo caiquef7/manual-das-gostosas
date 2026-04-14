@@ -299,6 +299,7 @@ export default function App() {
     const [motivationQuote, setMotivationQuote] = useState(null);
     const [expandedProductInfo, setExpandedProductInfo] = useState({});
     const [fraseCientificaInicial, setFraseCientificaInicial] = useState(null);
+    
     useEffect(() => {
         if (view !== 'mood') {
             setFraseCientificaInicial(null);
@@ -530,21 +531,22 @@ export default function App() {
                                 <Smile className={cn("w-10 h-10 transition-all duration-500", score >= 4 ? "text-fuchsia-500 scale-125 drop-shadow-lg" : "text-slate-200")} />
                             </div>
 
-                         {fraseCientificaInicial && (
+                            {fraseCientificaInicial && (
                                 <div className="p-6 bg-pink-50/50 border border-pink-100 rounded-[2rem] text-slate-700 text-sm italic font-medium leading-relaxed text-center shadow-sm">
                                     "{fraseCientificaInicial}"
                                 </div>
+                            )}
 
                             <button 
-    onClick={() => {
-        const index = Math.floor(Math.random() * FRASES_CIENTIFICAS.length);
-        setFraseCientificaInicial(FRASES_CIENTIFICAS[index]);
-    }} 
-    type="button"
-    className="w-full bg-pink-50 text-pink-600 font-black py-4 rounded-[2rem] transition-all hover:bg-pink-100 border border-pink-100 active:scale-95"
->
-    Me Motive
-</button>
+                                onClick={() => {
+                                    const index = Math.floor(Math.random() * FRASES_CIENTIFICAS.length);
+                                    setFraseCientificaInicial(FRASES_CIENTIFICAS[index]);
+                                }} 
+                                type="button"
+                                className="w-full bg-pink-50 text-pink-600 font-black py-4 rounded-[2rem] transition-all hover:bg-pink-100 border border-pink-100 active:scale-95"
+                            >
+                                Me Motive
+                            </button>
 
                             <button 
                                 onClick={handleMoodSubmit}
