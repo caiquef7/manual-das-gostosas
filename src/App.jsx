@@ -496,10 +496,6 @@ export default function App() {
                                 <Smile className={cn("w-10 h-10 transition-all duration-500", score >= 4 ? "text-fuchsia-500 scale-125 drop-shadow-lg" : "text-slate-200")} />
                             </div>
 
-                            {fraseCientificaInicial && (
-                                <div className="p-5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-700 text-sm italic font-medium leading-relaxed text-left shadow-sm">
-                                    "{fraseCientificaInicial}"
-                                </div>
                             )}
 
                          {fraseCientificaInicial && (
