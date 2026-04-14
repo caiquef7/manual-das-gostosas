@@ -536,12 +536,15 @@ export default function App() {
                                 </div>
 
                             <button 
-                                onClick={() => setFraseCientificaInicial(FRASES_CIENTIFICAS[Math.floor(Math.random() * FRASES_CIENTIFICAS.length)])} 
-                                type="button"
-                                className="w-full bg-pink-50 text-pink-600 font-black py-4 rounded-[2rem] transition-all hover:bg-pink-100 border border-pink-100 active:scale-95"
-                            >
-                                Me Motive
-                            </button>
+    onClick={() => {
+        const index = Math.floor(Math.random() * FRASES_CIENTIFICAS.length);
+        setFraseCientificaInicial(FRASES_CIENTIFICAS[index]);
+    }} 
+    type="button"
+    className="w-full bg-pink-50 text-pink-600 font-black py-4 rounded-[2rem] transition-all hover:bg-pink-100 border border-pink-100 active:scale-95"
+>
+    Me Motive
+</button>
 
                             <button 
                                 onClick={handleMoodSubmit}
