@@ -265,6 +265,11 @@ export default function App() {
     const [motivationQuote, setMotivationQuote] = useState(null);
     const [expandedProductInfo, setExpandedProductInfo] = useState({});
     const [fraseCientificaInicial, setFraseCientificaInicial] = useState(null);
+    useEffect(() => {
+        if (view !== 'mood') {
+            setFraseCientificaInicial(null);
+        }
+    }, [view]);
 
     useEffect(() => {
         if (!auth) return;
@@ -497,10 +502,16 @@ export default function App() {
                                 </div>
                             )}
 
+                         {fraseCientificaInicial && (
+                                <div className="p-6 bg-pink-50/50 border border-pink-100 rounded-[2rem] text-slate-700 text-sm italic font-medium leading-relaxed text-center shadow-sm">
+                                    "{fraseCientificaInicial}"
+                                </div>
+                            )}
+
                             <button 
                                 onClick={() => setFraseCientificaInicial(FRASES_CIENTIFICAS[Math.floor(Math.random() * FRASES_CIENTIFICAS.length)])} 
                                 type="button"
-                                className="w-full bg-transparent border-2 border-slate-900 text-slate-900 font-bold py-4 rounded-[2rem] transition-colors hover:bg-slate-50"
+                                className="w-full bg-pink-50 text-pink-600 font-black py-4 rounded-[2rem] transition-all hover:bg-pink-100 border border-pink-100 active:scale-95"
                             >
                                 Me Motive
                             </button>
