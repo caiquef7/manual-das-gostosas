@@ -248,7 +248,13 @@ const MOTIVATIONAL_QUOTES = [
     "Você é a única pessoa do mundo para quem você precisa ser boa o suficiente", "Cuidar-se deve ser um ato de celebrar a mulher que você é hoje",
     "Ninguém está torcendo mais por você do que a garota que você costumava ser. Continue!", "A felicidade tira fotos tremidas"
 ];
-
+const FRASES_CIENTIFICAS = [
+    "Você sabia que o autocuidado não é estética, é fisiologia? A ciência comprova que rituais repetidos reduzem a incerteza do cérebro, baixando o seu cortisol e diminuindo a ansiedade.",
+    "A ciência explica: quando você passa um hidratante, o toque ativa mecanorreceptores que ligam o seu modo 'descansar e recuperar'.",
+    "Você sabia que o seu perfume é um atalho biológico? O olfato vai direto para o sistema límbico, desativando o alerta de ameaça do cérebro.",
+    "A neurociência comprova que a forma como você se cuida altera sua postura. E uma postura imponente aumenta a autoconfiança via neurotransmissores.",
+    "A ciência mostra que a nossa pele é um órgão sensorial ativo. Um banho premium sinaliza para o seu hipotálamo que você está segura, melhorando o seu foco."
+];
 export default function App() {
     const [user, setUser] = useState(null);
     const [view, setView] = useState('mood');
@@ -258,6 +264,7 @@ export default function App() {
     const [showMotivationBtn, setShowMotivationBtn] = useState(false);
     const [motivationQuote, setMotivationQuote] = useState(null);
     const [expandedProductInfo, setExpandedProductInfo] = useState({});
+    const [fraseCientificaInicial, setFraseCientificaInicial] = useState(null);
 
     useEffect(() => {
         if (!auth) return;
@@ -483,6 +490,20 @@ export default function App() {
                                 <Meh className={cn("w-10 h-10 transition-all duration-500", score === 3 ? "text-pink-400 scale-125 drop-shadow-lg" : "text-slate-200")} />
                                 <Smile className={cn("w-10 h-10 transition-all duration-500", score >= 4 ? "text-fuchsia-500 scale-125 drop-shadow-lg" : "text-slate-200")} />
                             </div>
+
+                            {fraseCientificaInicial && (
+                                <div className="p-5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-700 text-sm italic font-medium leading-relaxed text-left shadow-sm">
+                                    "{fraseCientificaInicial}"
+                                </div>
+                            )}
+
+                            <button 
+                                onClick={() => setFraseCientificaInicial(FRASES_CIENTIFICAS[Math.floor(Math.random() * FRASES_CIENTIFICAS.length)])} 
+                                type="button"
+                                className="w-full bg-transparent border-2 border-slate-900 text-slate-900 font-bold py-4 rounded-[2rem] transition-colors hover:bg-slate-50"
+                            >
+                                Me Motive
+                            </button>
 
                             <button 
                                 onClick={handleMoodSubmit}
